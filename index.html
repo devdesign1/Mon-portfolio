@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soumare Aïcha</title>
+  
+  <!-- Préchargement des ressources critiques -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="main.js" as="script">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" as="style">
+  
+  <!-- Styles critiques -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <!-- Chargement différé des scripts non critiques -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="main.js" defer></script>
+  
+  <!-- Meta tags optimisés -->
+  <meta name="description" content="Portfolio de Soumare Aïcha, développeuse web passionnée. Découvrez ses projets créatifs et innovants.">
+  <meta name="keywords" content="portfolio, développeuse web, projets, compétences, contact">
+  <meta name="author" content="Soumare Aïcha">
+  <meta property="og:title" content="Portfolio de Soumare Aïcha" />
+  <meta property="og:description" content="Développeuse web fullstack | Création d'interfaces modernes & expériences utilisateur innovantes" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  
+  <!-- Optimisation des performances -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
+  <div id="loader">
+    <div class="vortex">
+      <div class="particles"></div>
+      <div class="glow"></div>
+      <div class="percentage">0%</div>
+    </div>
+  </div>
+
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/10 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:backdrop-blur-2xl">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <h2 class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent transition-transform hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(138,43,226,0.5)]">
+        Ayesha
+      </h2>
+      <!-- Navigation desktop -->
+      <ul class="hidden md:flex items-center gap-8">
+        <li class="group relative">
+          <a href="#hero" class="text-white/90 px-3 py-2 transition-all duration-300 hover:text-white">
+            Accueil
+            <span class="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li class="group relative">
+          <a href="#about" class="text-white/90 px-3 py-2 transition-all duration-300 hover:text-white">
+            À propos
+            <span class="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li class="group relative">
+          <a href="#skills" class="text-white/90 px-3 py-2 transition-all duration-300 hover:text-white">
+            Compétences
+            <span class="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li class="group relative">
+          <a href="#projects" class="text-white/90 px-3 py-2 transition-all duration-300 hover:text-white">
+            Projets
+            <span class="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li class="group relative">
+          <a href="#contact" class="text-white/90 px-3 py-2 transition-all duration-300 hover:text-white">
+            Contact
+            <span class="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 group-hover:w-full"></span>
+          </a>
+        </li>
+      </ul>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl hidden">
+        <div class="px-6 py-4 space-y-4">
+          <a href="#hero" class="block text-white/90 text-lg hover:text-white transition-colors">Accueil</a>
+          <a href="#about" class="block text-white/90 text-lg hover:text-white transition-colors">À propos</a>
+          <a href="#skills" class="block text-white/90 text-lg hover:text-white transition-colors">Compétences</a>
+          <a href="#projects" class="block text-white/90 text-lg hover:text-white transition-colors">Projets</a>
+          <a href="#contact" class="block text-white/90 text-lg hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero-section relative h-screen flex flex-col justify-center items-center text-center text-white">
+    <canvas id="bg" class="absolute inset-0 -z-10"></canvas>
+
+    <div class="space-y-8 max-w-4xl mx-auto px-4">
+      <h1 class="hero-text text-5xl sm:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 animate-fade-up">
+        <span class="nom block mb-4">Aïcha</span>
+        <span class="block text-2xl sm:text-3xl font-medium bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+          Créatrice d'expériences web innovantes
+        </span>
+      </h1>
+      <div class="space-y-4 animate-fade-up animate-delay-200">
+        <p class="text-lg sm:text-xl text-purple-100/90 max-w-2xl mx-auto">
+          Conception front-end • Développement sur mesure • Solutions performantes
+        </p>
+        <div class="mt-12">
+          <!-- Badges de compétences -->
+          <!-- Bouton principal avec effet de brillance -->
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg blur opacity-15 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <a href="#projects" class="relative flex items-center justify-center px-4 py-2 bg-white/5 backdrop-blur-sm text-white/80 font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/10">
+              <span>Mes projets</span>
+              <svg class="w-4 h-4 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A propos -->
+  <section id="about" class="relative py-20 bg-gradient-to-b from-black via-purple-900/10 to-black">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300 animate-gradient-x">
+        Passion & Évolution
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+        <!-- Engagement -->
+        <div class="space-y-8">
+          <p class="text-xl text-purple-100/90 leading-relaxed">
+            <span class="text-2xl text-purple-300 font-semibold">Développeuse Full Stack en formation</span>,
+            je transforme chaque ligne de code en opportunité d'apprentissage.
+            Mon approche allie <span class="text-pink-300">curiosité insatiable</span> et
+            <span class="text-purple-300">rigueur méthodique</span>.
+          </p>
+          <div class="p-6 bg-purple-900/30 rounded-xl border border-purple-800/50 hover:border-purple-500 transition-colors">
+            <h3 class="text-lg font-semibold text-purple-300 mb-3">🚀 Mon Écosystème Actuel</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">HTML/CSS</span>
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">JavaScript</span>
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">Bootstrap</span>
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">Figma</span>
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">Tailwind</span>
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">Three.js</span>
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">C#</span>
+              <span class="px-3 py-1 bg-purple-800/40 rounded-full text-purple-200">Canva</span>
+            </div>
+          </div>
+        </div>
+        <!-- Parcours -->
+        <div class="space-y-8">
+          <div class="p-6 bg-purple-900/30 rounded-xl border border-purple-800/50">
+            <h3 class="text-lg font-semibold text-purple-300 mb-4">📚 Parcours Académique</h3>
+            <p class="text-purple-100/90 mb-3">
+              Formation intensive en développement Informatique à L 'OSBT.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center space-x-2 text-purple-200">
+                <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                <span>1000+ heures de pratique intensive</span>
+              </li>
+              <li class="flex items-center space-x-2 text-purple-200">
+                <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                <span>Plusieurs projets concrets réalisés</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-6 bg-pink-900/20 rounded-xl border border-pink-800/50 group hover:border-pink-400 transition-colors">
+            <h3 class="text-lg font-semibold text-pink-300 mb-3">🎯 Prochaines Étapes</h3>
+            <ul class="space-y-3 text-pink-100/90">
+              <li class="flex items-center space-x-2">
+                <span class="text-pink-400">▹</span>
+                <span>Maîtriser les animations complexes</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-pink-400">▹</span>
+                <span>Explorer les architectures modernes</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-pink-400">▹</span>
+                <span>Contribuer à des projets open source</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-pink-400">▹</span>
+                <span>Formation en design graphique</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-20 text-center">
+        <p class="text-xl italic text-purple-300 max-w-3xl mx-auto">
+          "Le développement web est un voyage où chaque erreur devient une leçon
+          et chaque réussite une nouvelle passion."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section id="skills" class="relative py-32 bg-gradient-to-b from-[#2a0845] to-black">
+    <!-- Points animés -->
+    <div class="absolute inset-0 left-0 w-full h-full pointer-events-none z-0">
+      <svg id="animated-dots" class="w-full h-full" viewBox="0 0 1440 180" preserveAspectRatio="none">
+        <circle id="dot1" cx="200" cy="80" r="6" fill="#a78bfa" fill-opacity="0.15"></circle>
+        <circle id="dot2" cx="600" cy="120" r="8" fill="#f472b6" fill-opacity="0.12"></circle>
+        <circle id="dot3" cx="1000" cy="60" r="5" fill="#a78bfa" fill-opacity="0.18"></circle>
+        <circle id="dot4" cx="1300" cy="100" r="7" fill="#f472b6" fill-opacity="0.13"></circle>
+      </svg>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="relative z-10 max-w-3xl mx-auto px-6">
+      <div class="bg-transparent backdrop-blur-lg rounded-3xl shadow-2xl p-10 border border-purple-400/20 hover:border-pink-400/40 transition-all duration-500">
+        <h2 class="text-4xl font-bold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+          Mes Compétences
+        </h2>
+
+        <!-- Grille des compétences -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Compétence 1 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-purple-300">
+              <i class="fa-brands fa-css3-alt"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">Tailwind CSS</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="90"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Avancé
+              </div>
+            </div>
+          </div>
+
+          <!-- Compétence 2 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-orange-400">
+              <i class="fa-brands fa-html5"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">HTML/CSS</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="85"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Avancé
+              </div>
+            </div>
+          </div>
+
+          <!-- Compétence 3 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-yellow-300">
+              <i class="fa-brands fa-js-square"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">JavaScript</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="80"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Intermédiaire-Avancé
+              </div>
+            </div>
+          </div>
+
+          <!-- Compétence 4 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-pink-400">
+              <i class="fa-brands fa-figma"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">Figma</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="75"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Intermédiaire
+              </div>
+            </div>
+          </div>
+
+          <!-- Compétence 5 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-cyan-400">
+              <i class="fa-brands fa-react"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">React</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="70"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Intermédiaire
+              </div>
+            </div>
+          </div>
+
+          <!-- Compétence 6 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-green-400">
+              <i class="fa-brands fa-node-js"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">Node.js</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="65"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Intermédiaire
+              </div>
+            </div>
+          </div>
+
+          <!-- Compétence 7 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-gray-300">
+              <i class="fa-brands fa-git-alt"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">Git/GitHub</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="60"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Intermédiaire
+              </div>
+            </div>
+          </div>
+
+          <!-- Compétence 8 -->
+          <div class="group relative p-6 bg-white/5 rounded-xl border border-purple-400/20 hover:border-pink-400/40 transition-all duration-300 flex flex-col items-center">
+            <span class="text-4xl mb-4 text-blue-400">
+              <i class="fa-brands fa-wordpress-simple"></i>
+            </span>
+            <h3 class="text-xl font-semibold text-purple-100 mb-2">WordPress</h3>
+            <div class="w-full flex flex-col items-center">
+              <div class="relative w-full h-8 bg-purple-900/40 rounded-full overflow-hidden border border-purple-400/20 mt-2 group/skill">
+                <div class="absolute left-0 top-0 h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full skill-bar transition-all duration-700" data-percent="55"></div>
+                <span class="absolute inset-0 flex items-center justify-center text-pink-300 font-bold skill-bar-text">0%</span>
+              </div>
+              <div class="skill-level mt-2 text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Niveau : Débutant-Intermédiaire
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projet -->
+  <section id="projects" class="relative py-32 bg-gradient-to-b from-black via-purple-900/10 to-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-center text-4xl md:text-5xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+        Mes Projets
+      </h2>
+      <!-- Tabs for project type -->
+      <div class="flex justify-center mb-10 gap-4">
+        <button id="tabPerso" class="px-5 py-2 text-sm rounded-full border border-purple-400/30 bg-purple-900/30 text-pink-300 font-semibold transition-colors duration-300 shadow-none focus:outline-none focus:ring-2 focus:ring-pink-400/40">
+          Projets personnels
+        </button>
+        <button id="tabPro" class="px-5 py-2 text-sm rounded-full border border-purple-400/30 bg-transparent text-purple-300 font-semibold hover:bg-purple-900/30 hover:text-pink-300 transition-colors duration-300 shadow-none focus:outline-none focus:ring-2 focus:ring-pink-400/40">
+          Projets professionnels
+        </button>
+      </div>
+      <!-- Projects grid -->
+      <div id="projectsPerso" class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Projet Perso 1 -->
+        <div class="project-card bg-white/5 rounded-2xl p-8 border border-purple-400/10 hover:border-pink-400/40 transition shadow-lg flex flex-col cursor-pointer relative group">
+          <div class="h-44 rounded-xl overflow-hidden mb-4 border border-purple-400/20">
+            <img src="projet1.jpg" alt="Projet Portfolio Interactif" class="w-full h-full object-cover" loading="lazy" width="400" height="176" decoding="async" fetchpriority="low">
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-purple-200">Portfolio Interactif</h3>
+          <p class="text-purple-100/80 mb-4 flex-1">Un site portfolio moderne avec animations 3D et navigation fluide, réalisé avec Three.js et Tailwind CSS.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">Three.js</span>
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">Tailwind</span>
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">GSAP</span>
+          </div>
+          <!-- Overlay details -->
+          <div class="project-overlay absolute inset-0 bg-black/90 rounded-2xl flex flex-col justify-center items-center text-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 z-10 p-8">
+            <h4 class="text-2xl font-bold text-pink-300 mb-4">Détails du projet</h4>
+            <ul class="text-purple-100/90 text-base mb-4 space-y-2">
+              <li>• Responsive design et animations GSAP</li>
+              <li>• Intégration d'un canvas Three.js interactif</li>
+              <li>• Optimisation SEO et accessibilité</li>
+            </ul>
+            <button class="close-overlay px-4 py-2 mt-2 bg-pink-500/20 rounded-full text-pink-200 hover:bg-pink-500/40 transition">   
+              <a href="#" class="text-pink-400 hover:underline font-semibold mt-auto">Voir le projet ↗</a>
+            </button>
+          </div>
+        </div>
+        <!-- Projet Perso 2 -->
+        <div class="project-card bg-white/5 rounded-2xl p-8 border border-purple-400/10 hover:border-pink-400/40 transition shadow-lg flex flex-col cursor-pointer relative group">
+          <div class="h-44 rounded-xl overflow-hidden mb-4 border border-purple-400/20">
+            <img src="projet3.jpg" alt="Projet Générateur de Poésie" class="w-full h-full object-cover" loading="lazy" width="400" height="176">
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-purple-200">Générateur de Poésie</h3>
+          <p class="text-purple-100/80 mb-4 flex-1">Outil créatif générant des poèmes aléatoires à partir d'algorithmes et d'API linguistiques.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">JavaScript</span>
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">API</span>
+          </div>
+          <!-- Overlay details -->
+          <div class="project-overlay absolute inset-0 bg-black/90 rounded-2xl flex flex-col justify-center items-center text-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 z-10 p-8">
+            <h4 class="text-2xl font-bold text-pink-300 mb-4">Détails du projet</h4>
+            <ul class="text-purple-100/90 text-base mb-4 space-y-2">
+              <li>• Génération de poèmes via API</li>
+              <li>• Interface minimaliste et UX fluide</li>
+              <li>• Partage sur réseaux sociaux</li>
+            </ul>
+            <button class="close-overlay px-4 py-2 mt-2 bg-pink-500/20 rounded-full text-pink-200 hover:bg-pink-500/40 transition">   
+              <a href="#" class="text-pink-400 hover:underline font-semibold mt-auto">Voir le projet ↗</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="projectsPro" class="grid gap-12 md:grid-cols-2 lg:grid-cols-3 hidden">
+        <!-- Projet Pro 1 -->
+        <div class="project-card bg-white/5 rounded-2xl p-8 border border-purple-400/10 hover:border-pink-400/40 transition shadow-lg flex flex-col cursor-pointer relative group">
+          <div class="h-44 rounded-xl overflow-hidden mb-4 border border-purple-400/20">
+            <img src="projet2.jpg" alt="Projet Dashboard Financier" class="w-full h-full object-cover" loading="lazy" width="400" height="176">
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-purple-200">Dashboard Financier</h3>
+          <p class="text-purple-100/80 mb-4 flex-1">Application web de suivi des dépenses et revenus, avec graphiques dynamiques et authentification sécurisée.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">React</span>
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">Chart.js</span>
+            <span class="px-3 py-1 bg-purple-800/40 rounded-full text-xs">Firebase</span>
+          </div>
+          <!-- Overlay details -->
+          <div class="project-overlay absolute inset-0 bg-black/90 rounded-2xl flex flex-col justify-center items-center text-center opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 z-10 p-8">
+            <h4 class="text-2xl font-bold text-pink-300 mb-4">Détails du projet</h4>
+            <ul class="text-purple-100/90 text-base mb-4 space-y-2">
+              <li>• Authentification sécurisée (Firebase)</li>
+              <li>• Visualisation de données en temps réel</li>
+              <li>• Export PDF/Excel des rapports</li>
+            </ul>
+            <button class="close-overlay px-4 py-2 mt-2 bg-pink-500/20 rounded-full text-pink-200 hover:bg-pink-500/40 transition">   
+              <a href="#" class="text-pink-400 hover:underline font-semibold mt-auto">Voir le projet ↗</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="relative mt-24 h-px w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent">
+        <div class="absolute -top-2 left-1/2 w-4 h-4 bg-purple-400 rounded-full -translate-x-1/2"></div>
+      </div>
+      <!-- Bouton "Voir plus de projets" discret -->
+      <div class="flex justify-center mt-10">
+        <button id="moreProjectsBtn" class="px-5 py-2 text-sm text-purple-300 bg-transparent border border-purple-400/30 rounded-full hover:bg-purple-900/30 hover:text-pink-300 transition-colors duration-300 shadow-none">
+          Voir plus de projets
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="relative py-32 bg-gradient-to-b from-[#2a0845] to-black overflow-hidden">
+    <!-- Effet de points animés en fond -->
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <svg class="w-full h-full" viewBox="0 0 1440 180" preserveAspectRatio="none">
+        <circle cx="200" cy="80" r="6" fill="#a78bfa" fill-opacity="0.15">
+          <animate attributeName="cy" values="80;100;80" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="600" cy="120" r="8" fill="#f472b6" fill-opacity="0.12">
+          <animate attributeName="cy" values="120;140;120" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1000" cy="60" r="5" fill="#a78bfa" fill-opacity="0.18">
+          <animate attributeName="cy" values="60;90;60" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1300" cy="100" r="7" fill="#f472b6" fill-opacity="0.13">
+          <animate attributeName="cy" values="100;130;100" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+    <div class="relative z-10 max-w-2xl mx-auto px-6">
+      <div class="bg-white/5 backdrop-blur-lg rounded-3xl shadow-2xl p-10 border border-purple-400/20 hover:border-pink-400/40 transition-all duration-500">
+        <h2 class="text-4xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+          Entrons en contact
+        </h2>
+        <p class="text-purple-100 text-center mb-10 max-w-xl mx-auto">
+          Un projet, une question ou juste envie d'échanger ? Envoyez-moi un message, je vous répondrai rapidement !
+        </p>
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-purple-300 mb-2">Nom complet</label>
+            <input type="text" id="name" required class="w-full bg-white/10 border border-purple-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-400/40 transition" />
+          </div>
+          <div>
+            <label for="email" class="block text-purple-300 mb-2">Adresse e-mail</label>
+            <input type="email" id="email" required class="w-full bg-white/10 border border-purple-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-400/40 transition" />
+          </div>
+          <div>
+            <label for="message" class="block text-purple-300 mb-2">Votre message</label>
+            <textarea id="message" rows="4" required class="w-full bg-white/10 border border-purple-400/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-pink-400/40 transition"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-pink-600 hover:to-purple-700 transition">
+            Envoyer le message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="relative py-10 bg-black/90 border-t border-purple-900/30 text-center text-purple-200 text-sm">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <span>&copy; 2024 Soumare Aïcha. Tous droits réservés.</span>
+      <div class="flex gap-4 justify-center">
+        <a href="https://github.com/devdesign1" target="_blank" rel="noopener" class="hover:text-pink-400 transition-colors">GitHub</a>
+        <a href="mailto:khadijanourry@gmail.com" class="hover:text-pink-400 transition-colors">Email</a>
+        <a href="https://wa.me/2120783051006" target="_blank" rel="noopener" class="hover:text-pink-400 transition-colors">WhatsApp</a>
+        <a href="https://www.linkedin.com/https://Aicha Soumare" target="_blank" rel="noopener" class="hover:text-pink-400 transition-colors">LinkedIn</a>
+        <a href="CV Aicha.pdf" download class="hover:text-pink-400 transition-colors flex items-center gap-1">
+          <i class="fa-solid fa-download"></i>
+          CV
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton Scroll to Top -->
+  <button id="scrollToTopBtn" class="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 hidden" aria-label="Remonter en haut">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Three.js et ses dépendances -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js" defer></script>
+  <script src="main.js"></script>
+
+</body>
+</html> 
