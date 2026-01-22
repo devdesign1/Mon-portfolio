@@ -1,0 +1,17 @@
+{
+  "name": "soumareaichaportfolio",
+  "version": "1.0.0",
+  "description": "Portfolio de Soumare Aïcha",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2",
+    "three": "^0.158.0"
+  },
+  "devDependencies": {
+    "vercel": "^32.7.2"
+  }
+}
